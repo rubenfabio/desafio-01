@@ -36,17 +36,17 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <header className="bg-gradient-to-l from-[#574AE8] to-[#3EA1DB] ">
-        <div className="px-5 md:px-0 max-w-[900px] m-auto flex flex-col text-2xl text-white py-10 gap-y-16">
+        <div className="px-5 md:px-0 max-w-[900px] m-auto flex flex-col text-lg md:text-2xl text-white py-10 gap-y-16">
           <div className="flex place-content-between w-full">
             <div>Codelândia</div>
             <div>blog</div>
           </div>
-          <div className="flex place-items-center bg-opacity-20 bg-white rounded-md px-5">
+          <div className="flex place-items-center bg-opacity-20 bg-white rounded-md px-5 md:text-lg text-sm">
             <IoSearchSharp className="text-white "></IoSearchSharp>
             <input
               type="text"
               placeholder="Pesquisar no Blog"
-              className="  appearance-none w-full bg-opacity-0 bg-white text-lg transition placeholder:text-white leading-tight focus:outline-none  focus:border-purple-500 py-5 px-4"
+              className=" x appearance-none w-full bg-opacity-0 bg-white transition placeholder:text-white leading-tight focus:outline-none  focus:border-purple-500 py-5 px-4"
             ></input>
           </div>
         </div>
@@ -54,13 +54,17 @@ export default function Home() {
       <main className="bg-[#F9F9F9] w-full">
         <div className="px-5 md:px-0 flex max-w-[900px] flex-col m-auto py-24 gap-y-[50px]">
           {post.map((item) => (
-            <div className="bg-white p-6" key={item.id}>
-              <div className="flex place-content-between text-[16px] text-[#717171] pb-[8px]">
+            <div className="bg-white md:p-6 p-4" key={item.id}>
+              <div className="flex place-content-between text-sm md:text-[16px] text-[#717171] pb-[27px] md:pb-[22px]">
                 <p>02 de jul, 2021</p>
                 <IoHeartOutline></IoHeartOutline>
               </div>
-              <h2 className="text-[26px] text-[#1A202C] pb-1">{item.title} </h2>
-              <p className="text-[#717171]">{item.description}</p>
+              <h2 className="text-lg md:text-[26px] text-[#1A202C] md:pb-2 pb-[9px]">
+                {item.title}
+              </h2>
+              <p className="text-sm md:text-lg text-[#717171]">
+                {item.description}
+              </p>
             </div>
           ))}
         </div>
