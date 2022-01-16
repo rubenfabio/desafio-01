@@ -1,6 +1,33 @@
 import Head from 'next/head';
+import { IoHeartOutline, IoSearchSharp } from 'react-icons/io5';
 
 export default function Home() {
+  const post = [
+    {
+      id: '1',
+      title: 'Agora é oficial: o Windows 11 está vindo',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum auctor est. Nam vitae finibus ante. Duis lobortis tellus vel diam fringilla eu ullamcorper ex iaculis.',
+    },
+    {
+      id: '2',
+      title: 'Tim Berners-Lee vai leiloar código-fonte da web',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum auctor est. Nam vitae finibus ante. Duis lobortis tellus vel diam fringilla, eu ullamcorper ex iaculis. Praesent et auctor justo. Vestibulum nisl orci, lacinia venenatis leo sit amet, pulvinar tincidunt risus. Phasellus nisl dui, cursus a lectus et, interdum ullamcorper libero.',
+    },
+    {
+      id: '3',
+      title: 'Tem Firefox novo no pedaço e você vai querer migrar',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum auctor est.',
+    },
+    {
+      id: '4',
+      title: 'John McAfee, criador do antivírus McAfee, morre',
+      description:
+        'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum vestibulum auctor est. Nam vitae finibus ante. Duis lobortis tellus vel diam fringilla, eu ullamcorper ex iaculis. Praesent et auctor justo. Vestibulum nisl orci, lacinia venenatis leo sit amet, pulvinar tincidunt risus. Phasellus nisl dui, cursus a lectus et, interdum ullamcorper libero.',
+    },
+  ];
   return (
     <div>
       <Head>
@@ -14,20 +41,28 @@ export default function Home() {
             <div>Codelândia</div>
             <div>blog</div>
           </div>
-          <div>
+          <div className="flex place-items-center bg-opacity-20 bg-white rounded-md px-5">
+            <IoSearchSharp className="text-white "></IoSearchSharp>
             <input
               type="text"
               placeholder="Pesquisar no Blog"
-              className="appearance-none w-full bg-opacity-20 bg-white text-lg rounded-md transition placeholder:text-white leading-tight focus:outline-none focus:bg-opacity-30 focus:border-purple-500 py-5 px-4"
+              className="  appearance-none w-full bg-opacity-0 bg-white text-lg transition placeholder:text-white leading-tight focus:outline-none  focus:border-purple-500 py-5 px-4"
             ></input>
           </div>
         </div>
       </header>
       <main className="bg-[#F9F9F9] w-full">
-        <div className="px-5 md:px-0 flex max-w-[900px] flex-col m-auto py-24">
-          <div className="bg-white p-6">
-            <p></p>
-          </div>
+        <div className="px-5 md:px-0 flex max-w-[900px] flex-col m-auto py-24 gap-y-[50px]">
+          {post.map((item) => (
+            <div className="bg-white p-6" key={item.id}>
+              <div className="flex place-content-between text-[16px] text-[#717171] pb-[8px]">
+                <p>02 de jul, 2021</p>
+                <IoHeartOutline></IoHeartOutline>
+              </div>
+              <h2 className="text-[26px] text-[#1A202C] pb-1">{item.title} </h2>
+              <p className="text-[#717171]">{item.description}</p>
+            </div>
+          ))}
         </div>
       </main>
     </div>
